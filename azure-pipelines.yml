@@ -15,7 +15,7 @@ steps:
 #steps:
 #- task: Ant@1
   inputs:
-    workingDirectory: ''
+    #workingDirectory: ''
     buildFile: './build/build.xml'
     options: sfdx auth:sfdxurl:store -a dev -f file.txt
               rm -rf file.txt
