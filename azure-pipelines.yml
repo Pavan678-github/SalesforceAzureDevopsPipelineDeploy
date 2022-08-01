@@ -11,6 +11,9 @@ pool:
 
 steps:
 - task: Ant@1
+  displayName: 'Ant  build.xml'
+#steps:
+#- task: Ant@1
   inputs:
     workingDirectory: ''
     buildFile: './build/build.xml'
