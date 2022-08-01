@@ -14,7 +14,10 @@ steps:
   inputs:
     workingDirectory: ''
     buildFile: './build/build.xml'
-    options: -Dsalesforce.loginurl=$(salesforce.loginurl) -Dsalesforce.password=$(salesforce.password) -Dsalesforce.testLevel=$(salesforce.testLevel) -Dsalesforce.username=$(salesforce.username)
+    #options: -Dsalesforce.loginurl=$(salesforce.loginurl) -Dsalesforce.password=$(salesforce.password) -Dsalesforce.testLevel=$(salesforce.testLevel) -Dsalesforce.username=$(salesforce.username)
+    sfdx auth:sfdxurl:store -a dev -f file.txt
+    rm -rf file.txt
+    sfdx force:mdapi:deploy --wait 10 --deploydir $DEPLOYDIR --targetusername dev --testlevel $TESTLEVEL
     javaHomeOption: 'JDKVersion'
     jdkVersionOption: '1.8'
     jdkArchitectureOption: 'x64'
